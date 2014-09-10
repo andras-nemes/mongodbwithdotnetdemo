@@ -1,0 +1,50 @@
+﻿@model CarRentalWeb.ViewModels.CarViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>CarViewModel</legend>
+
+	<div class="display-label">
+         @Html.DisplayNameFor(model => model.Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Make)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Make)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DailyRentalFee)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DailyRentalFee)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberOfDoors)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberOfDoors)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CountriesAllowedIn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CountriesAllowedIn)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

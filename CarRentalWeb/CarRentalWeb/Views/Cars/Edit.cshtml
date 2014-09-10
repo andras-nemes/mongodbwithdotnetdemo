@@ -1,0 +1,62 @@
+﻿@model CarRentalWeb.ViewModels.UpdateCarViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>UpdateCarViewModel</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Make)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Make)
+            @Html.ValidationMessageFor(model => model.Make)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NumberOfDoors)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NumberOfDoors)
+            @Html.ValidationMessageFor(model => model.NumberOfDoors)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DailyRentalFee)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DailyRentalFee)
+            @Html.ValidationMessageFor(model => model.DailyRentalFee)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DelimitedListOfCountries)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DelimitedListOfCountries)
+            @Html.ValidationMessageFor(model => model.DelimitedListOfCountries)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,42 @@
+﻿@model CarRentalWeb.ViewModels.CarViewModel
+
+@{
+    ViewBag.Title = "Image";
+}
+
+<h2>Car image</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+	@Html.AntiForgeryToken()
+
+	<div>
+        
+		<div>
+			<label>Make: </label>
+			<div>
+				@Model.Make
+			</div>
+		</div>
+		
+		<div>
+			<label>Image: </label>
+			<div>
+				<input type="file" id="file" name="file"/>
+			</div>
+		</div>
+
+		<div>
+			<div>
+				<input type="submit" value="Save"/>
+			</div>
+		</div>
+	</div>
+}
+@if (Model.HasImage)
+{
+	<img src="@Url.Action("Image", "Images", new { imageId = @Model.ImageId})" />
+}
+<div>
+	@Html.ActionLink("Back to Cars", "Index")
+</div>
